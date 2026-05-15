@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: daily22
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/daily_platform
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  port: 8080
+
+app:
+  jwt:
+    secret: "-----BEGIN SECRET-----\nThisIsA256BitLongSecretKeyForDailyPlatformJWTTokenSigning\n-----END SECRET-----"
+    expiration-ms: 86400000
+  admin:
+    email: admin@dailyplatform.com
+    password: Admin@123456
+    name: Super
+    surname: Admin
